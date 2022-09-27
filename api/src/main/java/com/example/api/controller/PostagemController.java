@@ -1,7 +1,6 @@
 package com.example.api.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api.model.Postagem;
 import com.example.api.service.PostagemService;
-
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -49,13 +47,13 @@ public class PostagemController {
 			@ApiResponse(code = 404, message = "Endpoint não encontrado"),
 			@ApiResponse(code = 500, message = "Erro no servidor")
 	})
-	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Postagem>> obterPorId(@PathVariable Long id){
+	@GetMapping("/user/{id_Usuario}")
+	public ResponseEntity<List<Postagem>> obterPorId(@PathVariable Long id_Usuario){
 		try {
-			return new ResponseEntity<Optional<Postagem>>(postagemService.findById(id), HttpStatus.OK);
+			return new ResponseEntity<List<Postagem>>(postagemService.findByUserId(id_Usuario), HttpStatus.OK);
 		} 
 		catch (Exception e) {
-			return new ResponseEntity<Optional<Postagem>>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<List<Postagem>>(HttpStatus.BAD_REQUEST);
 		}
 	}
 	

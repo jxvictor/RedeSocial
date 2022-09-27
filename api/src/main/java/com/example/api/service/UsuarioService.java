@@ -27,4 +27,7 @@ public class UsuarioService {
 		return usuarioRepository.findById(id);
 	}
 	
+	public Usuario findUserByEmail(String email) {
+		return usuarioRepository.findByEmail(email);
+	}
 }

@@ -86,6 +86,30 @@ public class UsuarioController {
 		}
 	}
 	
+	@ApiOperation(value = "Realiza um login com email e senha do usuário")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Sucesso"),
+			@ApiResponse(code = 401, message = "Não autorizado"),
+			@ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
+			@ApiResponse(code = 404, message = "Endpoint não encontrado"),
+			@ApiResponse(code = 500, message = "Erro no servidor")
+	})
+	@PostMapping("/login")
+	public ResponseEntity<String> logar(@RequestBody @Valid Usuario usuario){
+		
+		Usuario usuarioEmailExiste = usuarioService.findUserByEmail(usuario.getEmail());
+		String usuarioSenhaExiste = usuarioEmailExiste.getSenha();
+		String senhaString = usuario.getSenha();
+		
+		if (usuarioEmailExiste.getEmail().isEmpty()) {
+			return new ResponseEntity<String>("Email não encontrado!", HttpStatus.BAD_REQUEST);
+		}else if (usuarioSenhaExiste.equals(senhaString)) {
+			return new ResponseEntity<String>("Login efetuado com sucesso!", HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>("Senha incorreta!", HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 	@ApiOperation(value = "Edita um usuário por id")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Sucesso"),
@@ -97,10 +121,10 @@ public class UsuarioController {
 	})
 	@PutMapping("/{id}")
 	public ResponseEntity<String> editar(@PathVariable(value="id") Long id, @RequestBody @Valid Usuario usuario) {
-        Optional<Usuario> c = usuarioService.findById(id);
+        Optional<Usuario> u = usuarioService.findById(id);
         try
 		{
-        	usuario.setId(c.get().getId());
+        	usuario.setId(u.get().getId());
         	usuarioService.save(usuario);
             return new ResponseEntity<String>("Usuário editado com sucesso", HttpStatus.OK);
 		}
