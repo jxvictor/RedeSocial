@@ -3,6 +3,7 @@ package com.example.api.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -57,7 +58,7 @@ public class Usuario implements Serializable{
 	private String senha;
 	
 	@JsonIgnoreProperties("usuario")
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Postagem> postagens;
 	
 }

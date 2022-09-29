@@ -41,7 +41,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"TESTE\",\r\n    \"nome\": \"6666666\",\r\n    \"username\": \"jxvictor\",\r\n    \"senha\": \"666666666666666\"\r\n}",
+					"raw": "{\r\n    \"email\": \"TESTE@gmail.com\",\r\n    \"nome\": \"teste\",\r\n    \"username\": \"teste\",\r\n    \"senha\": \"123321\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,7 +49,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/usuario/1",
+					"raw": "http://localhost:8080/usuario/44",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -57,7 +57,7 @@
 					"port": "8080",
 					"path": [
 						"usuario",
-						"1"
+						"44"
 					]
 				}
 			},
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"usuario\": {\"id\":37},\r\n    \"titulo\": \"545454554545454545454\",\r\n    \"texto\": \"54545454545454545454\"\r\n}",
+					"raw": "{\r\n    \"usuario\": {\"id\":44},\r\n    \"titulo\": \"321321321321\",\r\n    \"texto\": \"321321321321321\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -140,7 +140,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/usuario/11",
+					"raw": "http://localhost:8080/usuario/44",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -148,7 +148,7 @@
 					"port": "8080",
 					"path": [
 						"usuario",
-						"11"
+						"44"
 					]
 				}
 			},
@@ -172,7 +172,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem/user/11",
+					"raw": "http://localhost:8080/postagem/user/44",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -181,7 +181,7 @@
 					"path": [
 						"postagem",
 						"user",
-						"11"
+						"44"
 					]
 				}
 			},
@@ -253,7 +253,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/usuario/7",
+					"raw": "http://localhost:8080/usuario/44",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -261,7 +261,7 @@
 					"port": "8080",
 					"path": [
 						"usuario",
-						"7"
+						"44"
 					]
 				}
 			},
