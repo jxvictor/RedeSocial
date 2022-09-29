@@ -41,19 +41,23 @@ public class Usuario implements Serializable{
 	
 	@Email
 	@Column(name = "email", nullable = false, unique = true)
+	@ApiModelProperty(value = "Email do usuário")
 	private String email;
 	
 	@Column(name = "nome", nullable = false)
+	@ApiModelProperty(value = "Nome do usuário")
 	private String nome;
 	
 	@Column(name = "username", nullable = false, unique = true)
+	@ApiModelProperty(value = "Username do usuário")
 	private String username;
 	
 	@Column(name = "senha", nullable = false)
+	@ApiModelProperty(value = "Senha do usuário")
 	private String senha;
 	
 	@JsonIgnoreProperties("usuario")
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Postagem> postagens;
 	
 }

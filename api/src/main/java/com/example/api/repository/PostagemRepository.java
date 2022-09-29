@@ -14,5 +14,4 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 	
 	@Query(value = "select * from postagem where id_Usuario = ?", nativeQuery = true)
 	public List<Postagem> findByUserId(Long id_Usuario);
-	
 }

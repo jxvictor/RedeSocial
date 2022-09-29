@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jvalves2018@gmail.com\",\r\n    \"nome\": \"João Victor\",\r\n    \"username\": \"jxvictor\",\r\n    \"senha\": \"123321\"\r\n}",
+					"raw": "{\r\n    \"email\": \"chicodepepe@gmail.com\",\r\n    \"nome\": \"Chico de pepe\",\r\n    \"username\": \"chico\",\r\n    \"senha\": \"123321\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +70,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"usuario\": {\"id\":2},\r\n    \"titulo\": \"545454554545454545454\",\r\n    \"texto\": \"54545454545454545454\"\r\n}",
+					"raw": "{\r\n    \"usuario\": {\"id\":37},\r\n    \"titulo\": \"545454554545454545454\",\r\n    \"texto\": \"54545454545454545454\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,6 +123,38 @@
 			"response": []
 		},
 		{
+			"name": "GET USUÁRIO BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jvalves2018@gmail.com\",\r\n    \"nome\": \"João Victor\",\r\n    \"username\": \"jxvictor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET POSTAGENS BY USER ID",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -140,7 +172,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/postagem/user/1",
+					"raw": "http://localhost:8080/postagem/user/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -149,7 +181,38 @@
 					"path": [
 						"postagem",
 						"user",
-						"1"
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET POSTAGENS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jvalves2018@gmail.com\",\r\n    \"nome\": \"João Victor\",\r\n    \"username\": \"jxvictor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/postagem",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"postagem"
 					]
 				}
 			},
@@ -179,6 +242,26 @@
 					"path": [
 						"usuario",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USUÁRIO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuario/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"7"
 					]
 				}
 			},
